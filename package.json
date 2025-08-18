@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/blleng/hexo-theme-lx#readme",
   "devDependencies": {
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-imagemin": "^8.0.0",
+    "del": "^8.0.0",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^2.0.0",
-    "gulp-stylus": "^2.7.0",
+    "gulp-stylus": "^2.5.0",
     "gulp-uglify": "^3.0.2"
   }
 }

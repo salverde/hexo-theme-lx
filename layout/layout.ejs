@@ -7,8 +7,8 @@ if (pageTitle == '') {
 } else {
     pageTitle += ' | ' + config.title;
 }
-var js = theme.base_file.js;
-var css = theme.base_file.css;
+var base_js = theme.base_file.js;
+var base_css = theme.base_file.css;
 %><!DOCTYPE html>
 <html <%if(config.language.length){%>lang="<%-config.language.substring(0,2)%>"<%}%>>
 <head>
@@ -22,23 +22,26 @@ var css = theme.base_file.css;
   <meta name="description" content="<%- config.description%>">
   <%- partial('partials/config')%>
   <link rel="shortcut icon" href="<%- url_for(theme.favicon)%>">
-  <link rel="stylesheet" href="<%= css%>">
-  <% if(theme.custom_css) {%><link rel="stylesheet" href="/css/custom.css"><%}%>
+  <!-- load css -->
+  <%- css(base_css) %>
+  <% if(theme.custom_css) {%><%- css('dist/css/custom.min.css') %><%}%>
+  <%- css(theme.font_awesome) %>
   <%-partial('partials/font')%>
-  <script src="<%= theme.base_file.jquery_cdn%>"></script>
-  <script src="<%= js%>jquery.jside.menu.min.js"></script>
+  <!-- load js -->
+  <%- js(theme.base_file.jquery_cdn) %>
+  <%- js('dist/js/jquery.jside.menu.min.js') %>
+  <%- js('dist/js/jquery.easing.min.js') %>
 	<script>
 	$(document).ready(function(){
 	$(".menu-container").jSideMenu({
 	    jSidePosition: "position-right",
 	    jSideSticky: true,
 	    jSideSkin: "<%- theme.menu_theme%>",
-	     });
-	}); 
+	  });
+	});
 	</script>
   <%-partial('third-party/analytics/index')%>
   <%- font()%>
-  <link rel="stylesheet" href="<%= theme.font_awesome%>">
 <%- theme.custom_head%>
 </head>
 <body>
@@ -52,7 +55,6 @@ var css = theme.base_file.css;
 <div class="gototop js-top">
   <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
 </div>
-<script src="<%= js%>jquery.easing.min.js"></script>
 <script>
 (function () {
 	"use strict";
@@ -78,7 +80,7 @@ var css = theme.base_file.css;
 	});
 }());
 </script>
-<%if (theme.local_search.enable) {%><script src="<%= js%>local.search.min.js"></script><%}%>
+<%if (theme.local_search.enable) {%><%- js('dist/js/local.search.min.js') %><%}%>
 <%if (theme.comment.enable) {%><%- partial('third-party/comment')%><%}%>
 <%if (theme.mathjax.enable) {%><%if (page.mathjax) {%><%- partial('third-party/mathjax')%><%}%><%}%></body>
 </html>
