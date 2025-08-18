@@ -4,8 +4,8 @@
       <%if (theme.local_search.enable) {%><%- partial('\search-button')%><%}%>
       <div class="page-title">
         <div class="avatar"><a href="<%- config.root%>"><img src="<%- url_for(theme.avatar)%>" alt="<%- config.author%>"></a></div>
-        <span><%-page.date.format("YYYY-MM-DD")%></span>
-        <h2><%- truncate(page.title , {length: 15}) %></h2>
+        <span><%-page.date.format("MMM Do YYYY")%></span>
+        <h2><%- truncate(page.title, { length: 25 }) %></h2>
         <% if (page.tags && page.tags.length){ %><div class="tags"><i class="fa fa-tag"></i><%- list_tags(page.tags, { show_count: false, style: 'none', separator: ' <i class="fa fa-tag"></i>' }) %></div><%}%>
         <%if (theme.social.enable) { %><%- partial('sociallinks')%><%}%>
       </div>
