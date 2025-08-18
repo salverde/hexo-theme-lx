@@ -1,5 +1,8 @@
 <footer>
   <div>
-  Copyright &copy; <%-date(null,'YYYY')%>.<a href="<%- config.root%>"><%-config.title%></a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br><%-theme.footer%>
+  <span><a href="<%- config.root%>"><%-config.numeronym%></a> &copy; <%- moment([1984, 0, 2]).fromNow()%></span><br>
+  <span>Powered by</span>
+  <%- image_tag('/images/hexo.svg', {width: 15, height: 15})%>
+  <%-theme.footer%>
   </div>
 </footer>
