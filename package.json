@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blleng/hexo-theme-lx.git"
+    "url": "git+https://github.com/salverde/hexo-theme-lx.git"
   },
   "keywords": [
     "hexo",
@@ -18,9 +18,9 @@
   "author": "blleng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blleng/hexo-theme-lx/issues"
+    "url": "https://github.com/salverde/hexo-theme-lx/issues"
   },
-  "homepage": "https://github.com/blleng/hexo-theme-lx#readme",
+  "homepage": "https://github.com/salverde/hexo-theme-lx#readme",
   "devDependencies": {
     "del": "^8.0.0",
     "gulp": "^5.0.1",
