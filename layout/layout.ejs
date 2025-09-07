@@ -26,6 +26,7 @@ var base_css = theme.base_file.css;
   <%- css(base_css) %>
   <% if(theme.custom_css) {%><%- css('dist/css/custom.min.css') %><%}%>
   <%- css(theme.font_awesome) %>
+  <%- css(theme.line_awesome) %>
   <%-partial('partials/font')%>
   <!-- load js -->
   <%- js(theme.base_file.jquery_cdn) %>
